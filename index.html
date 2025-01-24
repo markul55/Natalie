@@ -54,11 +54,20 @@
       width: 120px;
     }
 
+    #noButton {
+      word-wrap: break-word; /* Umożliwia łamanie długich słów */
+      overflow-wrap: break-word; /* Dodane dla starszych przeglądarek */
+      text-align: center; /* Wyśrodkowanie tekstu w przycisku */
+      white-space: normal; /* Pozwala tekstowi zawijać się w nowej linii */
+      padding: 8px 16px; /* Dostosowanie paddingu dla większej czytelności */
+      max-width: 150px; /* Ograniczenie szerokości przycisku */
+    }
+
     /* Adjust button size for smaller screens */
     @media (max-width: 768px) {
       #responseButtons button {
         font-size: 14px;
-        width: 100px;
+        width: auto; /* Dostosowanie szerokości do tekstu */
         padding: 8px 16px;
       }
 
@@ -84,8 +93,8 @@
           TAK
         </button>
         <button id="noButton"
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium transition disabled:pointer-events-none disabled:opacity-50 hover:bg-red-700 h-12 min-w-[75px] w-auto px-4 py-2 bg-red-500 text-white">
-          NIE (lol?)
+          class="inline-flex items-center justify-center rounded-md text-[20px] font-medium transition disabled:pointer-events-none disabled:opacity-50 hover:bg-red-700 h-12 w-auto px-4 py-2 bg-red-500 text-white">
+          NIE (lol)
         </button>
       </div>
     </div>
