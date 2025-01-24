@@ -26,14 +26,58 @@
         transform: translateY(-10px);
       }
     }
+
+    /* Responsiveness */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 16px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .text {
+      text-align: center;
+    }
+
+    #responseButtons button {
+      font-size: 16px;
+      padding: 10px 20px;
+      width: 120px;
+    }
+
+    /* Adjust button size for smaller screens */
+    @media (max-width: 768px) {
+      #responseButtons button {
+        font-size: 14px;
+        width: 100px;
+        padding: 8px 16px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      #imageDisplay {
+        height: 200px;
+      }
+    }
   </style>
 </head>
 <body class="gradient-background">
   <div class="flex items-center justify-center h-screen">
-    <div class="flex flex-col items-center p-4">
-      <img id="imageDisplay" src="./images/catdance.gif" alt="smieszny gif" class="rounded-md h-[300px]" style="object-fit: cover;" />
-      <h2 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4">Sieeema Laska</h2>
-      <h2 id="valentineQuestion2" class="text-4xl font-bold italic text-[#bd1e59] my-4">Bedziesz moja dziewczyna?</h2>
+    <div class="flex flex-col items-center p-4 container">
+      <img id="imageDisplay" src="./images/catdance.gif" alt="śmieszny gif" class="rounded-md h-[300px]" style="object-fit: cover;" />
+      <h2 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4 text">Sieeema Laska</h2>
+      <h2 id="valentineQuestion2" class="text-4xl font-bold italic text-[#bd1e59] my-4 text">Będziesz moją dziewczyną?</h2>
       <div class="flex gap-4 pt-[20px] items-center" id="responseButtons">
         <button id="yesButton"
           class="bounce2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium disabled:pointer-events-none disabled:opacity-50 hover:bg-green-400 min-h-12 min-w-[75px] px-4 py-2 bg-green-500 text-white transition">
@@ -41,7 +85,7 @@
         </button>
         <button id="noButton"
           class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium transition disabled:pointer-events-none disabled:opacity-50 hover:bg-red-700 h-12 min-w-[75px] w-auto px-4 py-2 bg-red-500 text-white">
-          NIE (lol)
+          NIE (lol?)
         </button>
       </div>
     </div>
@@ -87,7 +131,7 @@
         yesButton.style.width = `${buttonWidth}px`;
         yesButton.style.fontSize = `${fontSize}px`; // Update font size
         if (noClickCount < 6) {
-          noButton.textContent = ["Nie", "Jestes pewna?", "Latafak?", "Ermmm ok? Jestem sigma mam WYJEBANE", "</3", "Musisz kliknąć tak pozdroooooo"][noClickCount];
+          noButton.textContent = ["Nie", "Jesteś pewna?", "Latafak?", "Ermmm ok? Jestem sigma mam WYJEBANE", "</3", "Musisz kliknąć tak pozdroooooo"][noClickCount];
         }
       }
     });
